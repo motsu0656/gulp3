@@ -1,7 +1,3 @@
-@charset "UTF-8";
-/*=======================================
-共通設定
-=======================================*/
 body {
   background-color: #fff;
 }
@@ -20,13 +16,11 @@ main {
   padding-top: 74px;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
-/*=======================================
-nav
-=======================================*/
 header {
   padding: 15px 0;
   position: fixed;
@@ -38,8 +32,6 @@ header {
 }
 header nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
   justify-content: space-between;
 }
 @media screen and (max-width: 1199px) {
@@ -47,35 +39,37 @@ header nav {
     padding: 0 50px;
   }
 }
-header nav .logo {
+header .logo {
   width: 60px;
   color: #777;
   font-size: 40px;
+  vertical-align: middle;
 }
-header nav .btn {
-  padding: 12px 14px;
+header .btn {
+  padding: 0 15px;
   line-height: 20px;
   display: inline-block;
   text-align: center;
   cursor: pointer;
-  color: #fff;
+  color: #ffffff;
   background: #6ba7eb;
   font-size: 12px;
+  padding: 12px 14px;
 }
-header nav .btn--1:hover {
+header .btn:hover {
   background-color: #333;
   transition: background-color 0.3s;
 }
 @media screen and (max-width: 767px) {
-  header nav .btn {
+  header .btn {
     display: none;
   }
 }
-header nav .drawer_open {
+header .drawer_open {
   display: none;
 }
 @media screen and (max-width: 767px) {
-  header nav .drawer_open {
+  header .drawer_open {
     display: inline-block;
     margin-left: auto;
     width: 40px;
@@ -84,13 +78,14 @@ header nav .drawer_open {
     border: 2px solid #777;
     cursor: pointer;
     transition: border-color 0.3s ease;
+    padding: 0;
   }
-  header nav .drawer_open:hover {
+  header .drawer_open:hover {
     border-color: #777;
   }
-  header nav .drawer_open span,
-header nav .drawer_open span:before,
-header nav .drawer_open span:after {
+  header .drawer_open span,
+header .drawer_open span:before,
+header .drawer_open span:after {
     content: "";
     display: block;
     height: 2px;
@@ -101,24 +96,21 @@ header nav .drawer_open span:after {
     transform: translateX(-50%);
     transition: background-color 0.3s ease;
   }
-  header nav .drawer_open span {
+  header .drawer_open span {
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  header nav .drawer_open span:before {
+  header .drawer_open span:before {
     top: -8px;
   }
-  header nav .drawer_open span:after {
+  header .drawer_open span:after {
     top: 8px;
   }
-  header nav .drawer_open:hover span, header nav .drawer_open:hover span:before, header nav .drawer_open:hover span:after {
+  header .drawer_open:hover span, header .drawer_open:hover span:before, header .drawer_open:hover span:after {
     background-color: #333;
   }
 }
 
-/*=======================================
-キービジュアル
-=======================================*/
 .keyvisual {
   background-image: url(../img/keyvisual/keyvisual.jpg);
   background-repeat: no-repeat;
@@ -146,11 +138,6 @@ header nav .drawer_open span:after {
   .keyvisual {
     padding: 250px 0;
   }
-}
-@media screen and (max-width: 767px) {
-  .keyvisual {
-    padding: 200px 0;
-  }
   .keyvisual h1 {
     font-size: 40px;
   }
@@ -158,10 +145,12 @@ header nav .drawer_open span:after {
     font-size: 30px;
   }
 }
+@media screen and (max-width: 767px) {
+  .keyvisual {
+    padding: 200px 0;
+  }
+}
 
-/*=======================================
-work
-========================================*/
 .work {
   background-color: #e3f2fd;
   padding-top: 50px;
@@ -173,7 +162,6 @@ work
 @media screen and (max-width: 1199px) {
   .work .work_box {
     display: block;
-    padding-bottom: 50px;
   }
 }
 .work .pc_icon {
@@ -188,7 +176,7 @@ work
 .work .text_box {
   flex: 6;
 }
-.work .text_box h2 {
+.work h2 {
   font-size: 40px;
   letter-spacing: 10px;
   margin-top: 20px;
@@ -196,17 +184,20 @@ work
   text-align: center;
   color: #333;
 }
-.work .text_box p {
+.work p {
   font-size: 15px;
   line-height: 18px;
   word-break: break-word;
   color: #555;
   text-align: center;
 }
+@media screen and (max-width: 1199px) {
+  .work {
+    padding-bottom: 50px;
+    width: 100%;
+  }
+}
 
-/*=======================================
-skills
-========================================*/
 .skills {
   padding: 50px 0 70px;
 }
@@ -219,13 +210,13 @@ skills
 .skills ul {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .skills ul img {
   width: 300px;
   height: 300px;
   opacity: 0.7;
   transition: opacity 0.7s ease-in-out;
+  display: block;
 }
 .skills ul img:hover {
   opacity: 1;
@@ -249,12 +240,9 @@ skills
   }
 }
 
-/*=======================================
-plan
-========================================*/
 .plan {
   background-color: #d0dfea;
-  padding: 50px 0;
+  padding: 50px 0 50px 0;
 }
 .plan h2 {
   margin-bottom: 50px;
@@ -276,25 +264,28 @@ plan
   background-color: #6ba7eb;
   font-size: 16px;
   line-height: 26px;
-  padding: 10px;
+  padding: 10px 10px;
+}
+.plan .cell--table th,
+.plan .cell--table td {
   border-left: 2px solid #fff;
+  font-size: 16px;
+  line-height: 26px;
+  padding: 10px 10px;
 }
 .plan .cell--table td {
   text-align: center;
-  font-size: 16px;
-  line-height: 26px;
-  padding: 10px;
 }
 .plan .cell--table tr {
-  background: #fff;
+  background: #f9f9f9;
 }
 .plan .cell--table tr:nth-child(even) {
   background: #e0efff;
 }
-.plan .cell--table tbody .left_th1 {
-  background-color: #fff;
+.plan .cell--table .left_th1 {
+  background-color: #f9f9f9;
 }
-.plan .cell--table tbody .left_th2 {
+.plan .cell--table .left_th2 {
   background: #e0efff;
 }
 @media screen and (max-width: 767px) {
@@ -307,9 +298,6 @@ plan
   }
 }
 
-/*=======================================
-SNS
-========================================*/
 .sns {
   width: 100%;
   background-color: #e3f2fd;
@@ -318,7 +306,6 @@ SNS
 .sns .icon_box {
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 0 auto;
 }
 .sns .icon_box li {
@@ -335,6 +322,7 @@ SNS
   justify-content: center;
   align-items: center;
   width: 185px;
+  padding: 0;
   background-color: transparent;
   transition: background-color 0.5s ease;
   text-decoration: none;
@@ -345,24 +333,32 @@ SNS
   overflow: hidden;
 }
 @media screen and (max-width: 767px) {
+  .sns .icon_box {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .sns .icon_box li {
     padding: 50px 0;
+    box-sizing: border-box;
     width: 100%;
   }
-  .sns .icon_box li a {
+  .sns .icon_box i {
+    margin: 0;
+  }
+  .sns .icon_box a {
     width: 100%;
     text-align: center;
   }
 }
 @media screen and (max-width: 767px) {
-  .sns .icon_box {
-    flex-direction: column;
+  .sns {
+    width: 100%;
+    padding: 50px 15px;
+    box-sizing: border-box;
   }
 }
 
-/*=======================================
-footer
-========================================*/
 footer {
   height: 55px;
   background-color: #cfd8dc;

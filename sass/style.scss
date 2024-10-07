@@ -1,25 +1,10 @@
 @charset "utf-8";
 
-/*=======================================
-共通設定
-=======================================*/
-$bg-white: #fff;
-$bg-light-blue: #e3f2fd;
-$bg-dark-blue: #6ba7eb;
-$bg-gray: #cfd8dc;
-$color-gray: #777;
-$color-dark-gray: #333;
-$color-light-gray: #8c8c8c;
-$color-white: #fff;
-
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+//=======================================
+// 共通設定
+//=======================================
 body {
-  background-color: $bg-white;
+  background-color: #fff;
 }
 
 .inner {
@@ -35,13 +20,14 @@ main {
   padding-top: 74px;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
-/*=======================================
-nav
-=======================================*/
+//=======================================
+// nav
+//=======================================
 header {
   padding: 15px 0;
   position: fixed;
@@ -49,99 +35,102 @@ header {
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: $bg-white;
+  background-color: #fff;
 
   nav {
-    @include flex-center;
+    display: flex;
     justify-content: space-between;
 
     @media screen and (max-width: 1199px) {
       padding: 0 50px;
     }
+  }
 
-    .logo {
-      width: 60px;
-      color: $color-gray;
-      font-size: 40px;
+  .logo {
+    width: 60px;
+    color: #777;
+    font-size: 40px;
+    vertical-align: middle;
+  }
+
+  .btn {
+    padding: 0 15px;
+    line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff;
+    background: #6ba7eb;
+    font-size: 12px;
+    padding: 12px 14px;
+
+    &:hover {
+      background-color: #333;
+      transition: background-color 0.3s;
     }
 
-    .btn {
-      padding: 12px 14px;
-      line-height: 20px;
-      display: inline-block;
-      text-align: center;
-      cursor: pointer;
-      color: $color-white;
-      background: $bg-dark-blue;
-      font-size: 12px;
-
-      &--1:hover {
-        background-color: $color-dark-gray;
-        transition: background-color 0.3s;
-      }
-
-      @media screen and (max-width: 767px) {
-        display: none;
-      }
-    }
-
-    .drawer_open {
+    @media screen and (max-width: 767px) {
       display: none;
+    }
+  }
 
-      @media screen and (max-width: 767px) {
-        display: inline-block;
-        margin-left: auto;
-        width: 40px;
-        height: 40px;
-        position: relative;
-        border: 2px solid $color-gray;
-        cursor: pointer;
-        transition: border-color 0.3s ease;
+  .drawer_open {
+    display: none;
 
-        &:hover {
-          border-color: $color-gray;
-        }
+    @media screen and (max-width: 767px) {
+      display: inline-block;
+      margin-left: auto;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      border: 2px solid #777;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+      padding: 0;
 
-        span,
-        span:before,
-        span:after {
-          content: '';
-          display: block;
-          height: 2px;
-          width: 20px;
-          background-color: $color-gray;
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          transition: background-color 0.3s ease;
-        }
+      &:hover {
+        border-color: #777;
+      }
 
-        span {
-          top: 50%;
-          transform: translate(-50%, -50%);
-        }
+      span,
+      span:before,
+      span:after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 20px;
+        background-color: #777;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: background-color 0.3s ease;
+      }
 
-        span:before {
-          top: -8px;
-        }
+      span {
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
 
-        span:after {
-          top: 8px;
-        }
+      span:before {
+        top: -8px;
+      }
 
-        &:hover span,
-        &:hover span:before,
-        &:hover span:after {
-          background-color: $color-dark-gray;
-        }
+      span:after {
+        top: 8px;
+      }
+
+      &:hover span,
+      &:hover span:before,
+      &:hover span:after {
+        background-color: #333;
       }
     }
   }
 }
 
-/*=======================================
-キービジュアル
-=======================================*/
+//=======================================
+// キービジュアル
+//========================================
 .keyvisual {
   background-image: url(../img/keyvisual/keyvisual.jpg);
   background-repeat: no-repeat;
@@ -154,7 +143,7 @@ header {
   h1 {
     font-size: 65px;
     font-weight: 700;
-    color: $bg-dark-blue;
+    color: #6ba7eb;
     margin-bottom: 30px;
     text-align: center;
   }
@@ -162,16 +151,12 @@ header {
   h2 {
     font-size: 40px;
     font-weight: 700;
-    color: $color-white;
+    color: #fff;
     text-align: center;
   }
 
   @media screen and (max-width: 1199px) {
     padding: 250px 0;
-  }
-
-  @media screen and (max-width: 767px) {
-    padding: 200px 0;
 
     h1 {
       font-size: 40px;
@@ -181,13 +166,17 @@ header {
       font-size: 30px;
     }
   }
+
+  @media screen and (max-width: 767px) {
+    padding: 200px 0;
+  }
 }
 
-/*=======================================
-work
-========================================*/
+//=======================================
+// work
+//========================================
 .work {
-  background-color: $bg-light-blue;
+  background-color: #e3f2fd;
   padding-top: 50px;
 
   .work_box {
@@ -196,12 +185,13 @@ work
 
     @media screen and (max-width: 1199px) {
       display: block;
-      padding-bottom: 50px;
     }
   }
 
   .pc_icon {
-    @include flex-center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 4;
 
     img {
@@ -211,29 +201,34 @@ work
 
   .text_box {
     flex: 6;
+  }
 
-    h2 {
-      font-size: 40px;
-      letter-spacing: 10px;
-      margin-top: 20px;
-      margin-bottom: 35px;
-      text-align: center;
-      color: $color-dark-gray;
-    }
+  h2 {
+    font-size: 40px;
+    letter-spacing: 10px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    text-align: center;
+    color: #333;
+  }
 
-    p {
-      font-size: 15px;
-      line-height: 18px;
-      word-break: break-word;
-      color: #555;
-      text-align: center;
-    }
+  p {
+    font-size: 15px;
+    line-height: 18px;
+    word-break: break-word;
+    color: #555;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1199px) {
+    padding-bottom: 50px;
+    width: 100%;
   }
 }
 
-/*=======================================
-skills
-========================================*/
+//=======================================
+// skills
+//========================================
 .skills {
   padding: 50px 0 70px;
 
@@ -245,13 +240,15 @@ skills
   }
 
   ul {
-    @include flex-center;
+    display: flex;
+    justify-content: center;
 
     img {
       width: 300px;
       height: 300px;
       opacity: 0.7;
       transition: opacity 0.7s ease-in-out;
+      display: block;
 
       &:hover {
         opacity: 1;
@@ -280,12 +277,12 @@ skills
   }
 }
 
-/*=======================================
-plan
-========================================*/
+//=======================================
+// plan
+//========================================
 .plan {
   background-color: #d0dfea;
-  padding: 50px 0;
+  padding: 50px 0 50px 0;
 
   h2 {
     margin-bottom: 50px;
@@ -307,33 +304,37 @@ plan
     }
 
     th {
-      background-color: $bg-dark-blue;
+      background-color: #6ba7eb;
       font-size: 16px;
       line-height: 26px;
-      padding: 10px;
-      border-left: 2px solid $color-white;
+      padding: 10px 10px;
+    }
+
+    th,
+    td {
+      border-left: 2px solid #fff;
+      font-size: 16px;
+      line-height: 26px;
+      padding: 10px 10px;
     }
 
     td {
       text-align: center;
-      font-size: 16px;
-      line-height: 26px;
-      padding: 10px;
     }
 
     tr {
-      background: $bg-white;
+      background: #f9f9f9;
 
       &:nth-child(even) {
         background: #e0efff;
       }
     }
 
-    tbody .left_th1 {
-      background-color: $bg-white;
+    .left_th1 {
+      background-color: #f9f9f9;
     }
 
-    tbody .left_th2 {
+    .left_th2 {
       background: #e0efff;
     }
 
@@ -350,29 +351,35 @@ plan
   }
 }
 
-/*=======================================
-SNS
-========================================*/
+//=======================================
+// SNS
+//========================================
 .sns {
   width: 100%;
-  background-color: $bg-light-blue;
+  background-color: #e3f2fd;
   padding: 200px 0;
 
   .icon_box {
-    @include flex-center;
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
 
     li {
-      @include flex-center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 50px 0;
 
       &:hover {
-        background-color: $bg-white;
+        background-color: #fff;
       }
 
       a {
-        @include flex-center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 185px;
+        padding: 0;
         background-color: transparent;
         transition: background-color 0.5s ease;
         text-decoration: none;
@@ -380,33 +387,46 @@ SNS
 
       i {
         font-size: 40px;
-        color: $color-light-gray;
+        color: #8c8c8c;
         overflow: hidden;
-      }
-
-      @media screen and (max-width: 767px) {
-        padding: 50px 0;
-        width: 100%;
-
-        a {
-          width: 100%;
-          text-align: center;
-        }
       }
     }
 
     @media screen and (max-width: 767px) {
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        padding: 50px 0;
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      i {
+        margin: 0;
+      }
+
+      a {
+        width: 100%;
+        text-align: center;
+      }
     }
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding: 50px 15px;
+    box-sizing: border-box;
   }
 }
 
-/*=======================================
-footer
-========================================*/
+//=======================================
+// footer
+//========================================
 footer {
   height: 55px;
-  background-color: $bg-gray;
+  background-color: #cfd8dc;
   position: relative;
 
   small {
